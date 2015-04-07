@@ -9,6 +9,8 @@ function virtualenv_prompt_info() {
             local name=`cat $VIRTUAL_ENV/__name__`
         elif [ `basename $VIRTUAL_ENV` = "__" ]; then
             local name=$(basename $(dirname $VIRTUAL_ENV))
+        elif [ `basename $VIRTUAL_ENV` = "env" ]; then
+            local name=$(basename $(dirname $VIRTUAL_ENV))
         else
             local name=$(basename $VIRTUAL_ENV)
         fi
